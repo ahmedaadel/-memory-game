@@ -223,7 +223,6 @@ public:
 int main() {
 	Game game = Game();
 
-
 	sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Simon Game");
 
 	window.setFramerateLimit(60);
@@ -251,11 +250,7 @@ int main() {
 	colorButtons[static_cast<int>(ColorEnum::YELLOW)]->setPosition((WINDOW_WIDTH - BUTTON_SIZE) / 2, (WINDOW_HEIGHT - BUTTON_SIZE) / 2 - BUTTON_SIZE - 20);
 	colorButtons[static_cast<int>(ColorEnum::BLUE)]->setPosition((WINDOW_WIDTH - BUTTON_SIZE) / 2, (WINDOW_HEIGHT - BUTTON_SIZE) / 2 + BUTTON_SIZE + 20);
 
-	startButton->onPress([&]() {
-
-
-		game.start_Button_onpressed(colorButtons, window, gui); });
-
+	startButton->onPress([&]() {game.start_Button_onpressed(colorButtons, window, gui); });
 
 	game.lastButtonPressTime = high_resolution_clock::now();
 
@@ -264,11 +259,7 @@ int main() {
 
 	for (int i = 0; i < static_cast<int>(ColorEnum::COUNT); ++i) {
 
-
-
-
 		colorButtons[i]->onClick([&, i]() {
-
 
 			sf::Color color = colorButtons[i]->getRenderer()->getBackgroundColor();
 
@@ -281,7 +272,9 @@ int main() {
 				if (game.sequence[game.currentStep] == static_cast<ColorEnum>(i)) {
 
 					game.currentStep++;
-					if (game.currentStep >= static_cast<int>(game.sequence.size())) {
+
+					if (game.currentStep >= static_cast<int>(game.sequence.size()))
+					{
 						game.sequence.push_back(static_cast<ColorEnum>(colorDistribution(gen)));
 						game.currentStep = 0;
 						game.level_up.play();
@@ -305,17 +298,9 @@ int main() {
 	auto startTime = std::chrono::system_clock::now();
 
 
-
-	// auto elapsedDuration = currentTime - lastButtonPressTime;
-
-
 	 // Start the game
 	while (window.isOpen())
 	{
-
-
-
-
 		if (game.time_flag == true) {
 			game.currentTime = steady_clock::now();
 			if (game.first_time == true) {
@@ -331,8 +316,6 @@ int main() {
 				std::cout << elapsed.count();
 				game.gameOver(window, gui);
 				elapsed = game.currentTime - game.currentTime;
-
-
 			}
 		}
 
