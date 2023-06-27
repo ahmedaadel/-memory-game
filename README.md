@@ -3,6 +3,7 @@
 Simon Game is made up using  C++ for the logic and TGui library for  GUI  for doing the graphical interface and for playing the audio
 
 Game logic :
+
 -it has a start button in the middle of the screen and 4 colored button around the middle 
 
 -The game shows the sequence by lighting up one of the buttons for 0.5 seconds and playing one of the 4 music notes.
