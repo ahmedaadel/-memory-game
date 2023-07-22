@@ -11,5 +11,13 @@ Game logic :
 -Once the program has shown the sequence, the user must then click the 4 color buttons
 in the same order that the program generated. If the user presses the correct sequence, then the program adds one more color to the sequence and you repeat.
 
+
+
+
+![Alt Text](https://github.com/ahmedaadel/memory-game/blob/master/pic1.png)
+
+
 -If the user types in a wrong color that is not the next one in the sequence, 
 If the user doesn’t hit a button within 5 seconds of the last button they hit then the game is over 
+
+![My Picture](https://github.com/ahmedaadel/memory-game/blob/master/pic2.png)
